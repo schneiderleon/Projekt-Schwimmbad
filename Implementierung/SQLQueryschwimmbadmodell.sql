@@ -1,8 +1,7 @@
-
 Use SwimmingPoolShop;
 
-If Object_ID ('Customer') Is not Null 
-drop table Customer; 
+--If Object_ID ('Customer') Is not Null 
+--drop table Customer; 
 
 --If OBJECT_ID ('Product') is not null 
 --drop table Product;
@@ -28,6 +27,8 @@ Product_ID int Primary Key not null,
 ProductName nvarchar (100) not null,
 ProductDescription nvarchar(1000),
 Price Decimal (20,2) not null,
+Order_ID int,
+foreign key (Order_ID) references CustomerOrder(Order_ID)
 )
 
 Create Table CustomerOrder
@@ -40,15 +41,9 @@ Foreign Key (Customer_ID) References Customer(Customer_ID)
 	on delete cascade
 )
 
-Create Table OrderItem(
-OrderItem_ID int primary Key not null,
-Quantity int not null,
-Order_ID int not null,
-Product_ID int not null,
-
-foreign key (Order_ID) references CustomerOrder(Order_ID)
-	,
-
-foreign key (Product_ID) references Product (Product_ID)
-	
+Create Table Product_CustomerOrder
+(
+Product_ID int Foreign Key ,
+Order_ID int Primary Key not null,
 )
+
