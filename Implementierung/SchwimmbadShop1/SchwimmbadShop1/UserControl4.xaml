@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="SchwimmbadShop1.UserControl4"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SchwimmbadShop1"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="10" x:Name="shop" Background="White">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <!-- Buttons für Hinzufügen und Löschen -->
+        <Grid  Margin="0,0,0,10" Grid.Row="0" Grid.ColumnSpan="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <Button Content="Produkt hinzufügen" Click="AddButton_Click" Grid.Column="1" Grid.Row="0" Margin="20"/>
+            <Button Content="Produkt löschen"  Click="DelButton_Click" Grid.Column="1" Grid.Row="1" Margin="20"/>
+            <Button Content="Zurück" Click="backButton_Click" Grid.Column="0" Grid.Row="2" Margin="20"></Button>
+            
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.Column="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <TextBox x:Name="prdktid" Grid.Row="0" Margin="15" Grid.Column="1"></TextBox>
+            <TextBox x:Name="prdktname" Grid.Row="1" Margin="15" Grid.Column="1"></TextBox>
+            <TextBox x:Name="prdktbesch" Grid.Row="2" Margin="15" Grid.Column="1"></TextBox>
+            <TextBox x:Name="prdktpr" Grid.Row="3" Margin="15" Grid.Column="1"></TextBox>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"> ProduktID :</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"> Produktname :</TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"> Produktbeschreibung :</TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"> Preis :</TextBlock>
+
+        </Grid>
+        
+        
+        <DataGrid x:Name="ProductsDataGrid" Grid.Row="1" ItemsSource="{Binding}" 
+                  AutoGenerateColumns="False"  Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Produkt-ID" Binding="{Binding ProductId}" Width="*"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding ProductName}" Width="2*"/>
+                <DataGridTextColumn Header="Beschreibung" Binding="{Binding ProductDescription}" Width="3*"/>
+                <DataGridTextColumn Header="Preis" Binding="{Binding Price}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>
