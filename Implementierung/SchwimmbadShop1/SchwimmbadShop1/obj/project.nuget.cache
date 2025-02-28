@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DEUV7aReEUM=",
+  "dgSpecHash": "p8ixqUWJEdk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\schne\\source\\repos\\SchwimmbadShop1\\SchwimmbadShop1\\SchwimmbadShop1.csproj",
+  "projectFilePath": "C:\\Users\\schne\\Documents\\GitHub\\Projekt-Schwimmbad\\Implementierung\\SchwimmbadShop1\\SchwimmbadShop1\\SchwimmbadShop1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\schne\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\schne\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
